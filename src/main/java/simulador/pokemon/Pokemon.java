@@ -70,4 +70,8 @@ public abstract class Pokemon implements Serializable {
     public void setEstado(){
         this.estado= estado;
     }
+
+    private void setEstado(Estado estado) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

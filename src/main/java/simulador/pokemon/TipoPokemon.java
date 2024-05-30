@@ -6,166 +6,165 @@ public enum TipoPokemon{
     
     public static double obtenerMultiplicadorDeDanio(TipoPokemon atacante, TipoPokemon defensor){
         switch (atacante) {
-            case FUEGO:
+            case FUEGO -> {
                 switch (defensor) {
-                    case PLANTA:
-                    case BICHO:
-                    case HIELO:
+                    case PLANTA, BICHO, HIELO -> {
                         return 2.0;
-                    case AGUA:
-                    case ROCA:
-                    case ACERO:
+                    }
+                    case AGUA, ROCA, ACERO -> {
                         return 0.5;
+                    }
                 }
-                break;
-            case AGUA:
-                switch (defensor) {
-                    case FUEGO:
-                    case ROCA:
-                        return 2.0;
-                    case PLANTA:
-                        return 0.5;
-                }
-                break;
-            case PLANTA:
-                switch (defensor) {
-                    case AGUA:
-                    case ROCA:
-                    case TIERRA:
-                        return 2.0;
-                    case FUEGO:
-                    case VENENO:
-                    case ACERO:
-                    case BICHO:
-                        return 0.5;
-                }
-                break;
-            case VENENO:
-                switch (defensor) {
-                    case PLANTA:
-                    case HADA:
-                        return 2.0;
-                    case FANTASMA:
-                    case ROCA:
-                        return 0.5;
-                }
-                break;
-            case ELECTRICO:
-                switch (defensor) {
-                    case AGUA:
-                    case VOLADOR:
-                        return 2.0;
-                    case PLANTA:
-                        return 0.5;
-                    case TIERRA:
-                        return 0.0;
-                }
-                break;
-            case PSIQUICO:
-                switch (defensor) {
-                    case VENENO:
-                    case LUCHA:
-                        return 2.0;
-                }
-                break;
-            case ROCA:
-                switch (defensor) {
-                    case FUEGO:
-                    case VOLADOR:
-                    case ACERO:
-                    case BICHO:
-                    case HIELO:
-                        return 2.0;
-                    case LUCHA:
-                        return 0.5;
-                }
-                break;
-            case TIERRA:
-                switch (defensor) {
-                    case FUEGO:
-                    case VENENO:
-                    case ROCA:
-                    case ACERO:
-                        return 2.0;
-                    case VOLADOR:
-                        return 0.5;
-                    case ELECTRICO:
-                        return 0.0;
-                }
-                break;
-            case NORMAL:
-                switch (defensor) {
-                    case FANTASMA:
-                        return 0.0;
-                }
-                break;
-            case VOLADOR:
-                switch (defensor) {
-                    case PLANTA:
-                    case ELECTRICO:
-                    case BICHO:
-                        return 2.0;
-                    case ROCA:
-                        return 0.5;
-                }
-                break;
-            case HADA:
-                switch (defensor) {
-                    case PSIQUICO:
+            }
 
+            case AGUA -> {
+                switch (defensor) {
+                    case FUEGO, ROCA -> {
+                        return 2.0;
+                    }
+                    case PLANTA -> {
+                        return 0.5;
+                    }
+                }
+            }
+
+            case PLANTA -> {
+                switch (defensor) {
+                    case AGUA, ROCA, TIERRA -> {
                         return 2.0;
                 }
-                break;
-            case LUCHA:
-                switch (defensor) {
-                    case ROCA:
-                    case NORMAL:
-                    case HIELO:
-                        return 2.0;
-                    case PSIQUICO:
-                    case HADA:
-                    case FANTASMA:
+                    case FUEGO, VENENO, ACERO, BICHO -> {
                         return 0.5;
                 }
-                break;
-            case ACERO:
-                switch (defensor) {
-                    case FUEGO:
-                    case ROCA:
-                    case HADA:
-                    case LUCHA:
-                        return 2.0;
-                    case PSIQUICO:
-                        return 0.5;
                 }
-                break;
-            case BICHO:
+            }
+            case VENENO -> {
                 switch (defensor) {
-                    case PLANTA:
-                    case VOLADOR:
-                        return 2.0;
-                    case FANTASMA:
-                    case ACERO:
-                        return 0.5;
-                }
-                break;
-            case HIELO:
-                switch (defensor) {
-                    case PLANTA:
-                    case TIERRA:
+                    case PLANTA, HADA -> {
                         return 2.0;
                 }
-                break;
-            case FANTASMA:
-                switch (defensor) {
-                    case FANTASMA:
-                        return 2.0;
-                    case VENENO:
+                    case FANTASMA, ROCA -> {
                         return 0.5;
-                    case NORMAL:
+                }
+                }
+            }
+            case ELECTRICO -> {
+                switch (defensor) {
+                    case AGUA, VOLADOR -> {
+                        return 2.0;
+                }
+                    case PLANTA -> {
+                        return 0.5;
+                }
+                    case TIERRA -> {
                         return 0.0;
                 }
-                break;           
+                }
+            }
+            case PSIQUICO -> {
+                switch (defensor) {
+                    case VENENO, LUCHA -> {
+                        return 2.0;
+                }
+                }
+            }
+            case ROCA -> {
+                switch (defensor) {
+                    case FUEGO, VOLADOR, ACERO, BICHO, HIELO -> {
+                        return 2.0;
+                }
+                    case LUCHA -> {
+                        return 0.5;
+                }
+                }
+            }
+            case TIERRA -> {
+                switch (defensor) {
+                    case FUEGO, VENENO, ROCA, ACERO -> {
+                        return 2.0;
+                }
+                    case VOLADOR -> {
+                        return 0.5;
+                }
+                    case ELECTRICO -> {
+                        return 0.0;
+                }
+                }
+            }
+            case NORMAL -> {
+                switch (defensor) {
+                    case FANTASMA -> {
+                        return 0.0;
+                }
+                }
+            }
+            case VOLADOR -> {
+                switch (defensor) {
+                    case PLANTA, ELECTRICO, BICHO -> {
+                        return 2.0;
+                }
+                    case ROCA -> {
+                        return 0.5;
+                }
+                }
+            }
+            case HADA -> {
+                switch (defensor) {
+                    case PSIQUICO -> {
+                        return 2.0;
+                }
+                }
+            }
+            case LUCHA -> {
+                switch (defensor) {
+                    case ROCA, NORMAL, HIELO -> {
+                        return 2.0;
+                }
+                    case PSIQUICO, HADA, FANTASMA -> {
+                        return 0.5;
+                }
+                }
+            }
+            case ACERO -> {
+                switch (defensor) {
+                    case FUEGO, ROCA, HADA, LUCHA -> {
+                        return 2.0;
+                }
+                    case PSIQUICO -> {
+                        return 0.5;
+                }
+                }
+            }
+            case BICHO -> {
+                switch (defensor) {
+                    case PLANTA, VOLADOR -> {
+                        return 2.0;
+                }
+                    case FANTASMA, ACERO -> {
+                        return 0.5;
+                }
+                }
+            }
+            case HIELO -> {
+                switch (defensor) {
+                    case PLANTA, TIERRA -> {
+                        return 2.0;
+                }
+                }
+            }
+            case FANTASMA -> {
+                switch (defensor) {
+                    case FANTASMA -> {
+                        return 2.0;
+                }
+                    case VENENO -> {
+                        return 0.5;
+                }
+                    case NORMAL -> {
+                        return 0.0;
+                }
+                }
+            }           
         }
         return 1.0;
     }    
